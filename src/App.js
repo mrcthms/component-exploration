@@ -3,23 +3,34 @@ import './App.css'
 import Type from './components/Type'
 import Spaced from './components/Spaced'
 import Padded from './components/Padded'
+import Color, { colors } from './components/Color'
 
 class App extends Component {
   render () {
     return (
-      <div className='app'>
-        <a href="#type">Go to Type</a> • <a href="#spacing">Go to Spacing</a> • <a href="#colors">Go to colors</a>
+      <div className='app' style={{ paddingTop: 52 }}>
+        <div style={{
+          position: 'fixed',
+          padding: '16px',
+          background: 'white',
+          left: 0,
+          top: 0,
+          width: '100%',
+          zIndex: 1
+        }}>
+          <a href='#type'>Go to Type</a> • <a href='#colors'>Go to Colors</a> • <a href='#spacing'>Go to Spacing</a>
+        </div>
         <Spaced bottom='m'>
           <Type order='title'>
             <h1 className='app-title'>Basic Primitive Components for Helios</h1>
           </Type>
         </Spaced>
-        <Spaced bottom='xxl'>
-          <Type order='title' size='smaller'>
-            <h2>Type</h2>
-          </Type>
-        </Spaced>
-        <div id='type'>
+        <div id='type' style={{ paddingTop: 52 }}>
+          <Spaced bottom='xxl'>
+            <Type order='title' size='smaller'>
+              <h2>Type</h2>
+            </Type>
+          </Spaced>
           <Type order='label'>
             <div>Text Title</div>
           </Type>
@@ -176,21 +187,51 @@ class App extends Component {
           </Type>
         </div>
 
-        <Spaced bottom='xxl' top='xxl'>
-          <Type order='title' size='smaller'>
-            <h2>Spacing</h2>
-          </Type>
-        </Spaced>
-        <div id='spacing'>
+        <div id='colors' style={{ paddingTop: 52 }}>
+          <Spaced bottom='xxl'>
+            <Type order='title' size='smaller'>
+              <h2>Color</h2>
+            </Type>
+          </Spaced>
+          {colors.map(color => [
+            <Color content={color.indexOf('black') > -1 ? 'gray-lighter' : 'black'} background={color}>
+              <Padded top='m' right='m' bottom='m' left='m'>
+                <Spaced bottom='m'>
+                  <div>I have a {color} background</div>
+                </Spaced>
+              </Padded>
+            </Color>,
+            <Color content={color} background={color.indexOf('black') === -1 && (color.indexOf('lighter') > -1 || color.indexOf('lightest') > -1) ? 'black' : 'gray-lightest'}>
+              <Padded top='m' right='m' bottom='m' left='m'>
+                <Spaced bottom='m'>
+                  <div>I have a {color} content</div>
+                </Spaced>
+              </Padded>
+            </Color>
+          ])}
+        </div>
+
+        <div id='spacing' style={{ paddingTop: 52 }}>
+          <Spaced bottom='xxl'>
+            <Type order='title' size='smaller'>
+              <h2>Spacing</h2>
+            </Type>
+          </Spaced>
           <Spaced top='xxl' right='xl' bottom='s' left='l'>
-            <div style={{backgroundColor: '#f5f5f0'}}>This should have xxl spacing on top, xl spacing on right, s spacing on bottom, and l spacing on left</div>
+            <Color content='red-lighter' background='red'>
+              <div>This should have xxl spacing on top, xl spacing on right, s spacing on bottom, and l spacing on left</div>
+            </Color>
           </Spaced>
           <Padded top='m' right='xs' bottom='xl' left='s'>
-            <div style={{backgroundColor: '#e5e5e0'}}>This should have m padding on top, xs padding on right, xl padding on bottom, and s padding on left</div>
+            <Color content='green-lighter' background='green'>
+              <div>This should have m padding on top, xs padding on right, xl padding on bottom, and s padding on left</div>
+            </Color>
           </Padded>
           <Spaced top='m' right='l' bottom='xs' left='s'>
             <Padded top='xl' right='s' bottom='m' left='xs'>
-              <div style={{backgroundColor: '#d5d5d0'}}>This should have both m spacing on top, l spacing on right, xs spacing on bottom, and s spacing on left, as well as xl padding on top, s padding on right, m padding on bottom, and xs padding on left</div>
+              <Color content='blue-lighter' background='blue'>
+                <div>This should have both m spacing on top, l spacing on right, xs spacing on bottom, and s spacing on left, as well as xl padding on top, s padding on right, m padding on bottom, and xs padding on left</div>
+              </Color>
             </Padded>
           </Spaced>
         </div>
