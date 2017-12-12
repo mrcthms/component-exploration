@@ -10,3 +10,12 @@ html, button, select, input {
 .app {
   padding: 32px;
 }
+
+/* for sake of demo */
+
+.text-label:first-of-type {
+  margin-bottom: 32px;
+}
+* + .text-label {
+  margin: 32px 0;
+}

@@ -9,8 +9,7 @@ h1, h2, h3, h4, h5, h6 {
 .text-title,
 .text-title-smaller,
 .text-subtitle-larger,
-.text-subtitle
- {
+.text-subtitle {
     font-family: "Eina 03";
 }
 
@@ -31,11 +30,17 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 40px;
   font-weight: 600;
 }
+.text-title.text-prose {
+  line-height: 44px;
+}
 
 .text-title-smaller {
   font-size: 30px;
   line-height: 36px;
   font-weight: 600;
+}
+.text-title-smaller.text-prose {
+  line-height: 40px;
 }
 
 .text-subtitle-larger {
@@ -43,11 +48,17 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 28px;
   font-weight: 600;
 }
+.text-subtitle-larger.text-prose {
+  line-height: 32px;
+}
 
 .text-subtitle {
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
+}
+.text-subtitle.text-prose {
+  line-height: 28px;
 }
 
 .text-subtitle-smaller {
@@ -55,11 +66,17 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 20px;
   font-weight: 400;
 }
+.text-subtitle-smaller.text-prose {
+  line-height: 24px;
+}
 
 .text-subtitle-smallest {
   font-size: 13px;
   line-height: 20px;
   font-weight: 400;
+}
+.text-subtitle-smallest.text-prose {
+  line-height: 24px;
 }
 
 .text-body-larger {
@@ -67,11 +84,17 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 24px;
   font-weight: 300;
 }
+.text-body-larger.text-prose {
+  line-height: 28px;
+}
 
 .text-body {
   font-size: 14px;
   line-height: 20px;
   font-weight: 300;
+}
+.text-body.text-prose {
+  line-height: 24px;
 }
 
 .text-body-smaller {
@@ -79,11 +102,17 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 16px;
   font-weight: 300;
 }
+.text-body-smaller.text-prose {
+  line-height: 20px;
+}
 
 .text-body-smallest {
   font-size: 12px;
   line-height: 16px;
   font-weight: 300;
+}
+.text-body-smallest.text-prose {
+  line-height: 20px;
 }
 
 .text-label {
@@ -91,4 +120,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 16px;
   font-weight: 500;
   text-transform: uppercase;
+}
+.text-label.text-prose {
+  line-height: 20px;
 }
