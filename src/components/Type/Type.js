@@ -3,13 +3,16 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import './Type.css'
 
-const getClassName = ({ order, size, prose }, { className }) => {
-  return cx({
-    [`text-${order}`]: !size,
-    [`text-${order}-${size}`]: size,
-    'text-prose': prose,
-    ...className
-  })
+const getClassName = ({ order, size, prose, className }, { props: { className: childClassName } }) => {
+  return cx(
+    {
+      [`text-${order}`]: !size,
+      [`text-${order}-${size}`]: size,
+      'text-prose': prose
+    },
+    className,
+    childClassName
+  )
 }
 
 const Type = props => {
