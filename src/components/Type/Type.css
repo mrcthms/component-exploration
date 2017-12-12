@@ -1,0 +1,94 @@
+/* Resets */
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1em;
+}
+
+/* Font families */
+
+.text-title,
+.text-title-smaller,
+.text-subtitle-larger,
+.text-subtitle
+ {
+    font-family: "Eina 03";
+}
+
+.text-subtitle-smaller,
+.text-subtitle-smallest,
+.text-body-larger,
+.text-body,
+.text-body-smaller,
+.text-body-smallest,
+.text-label {
+  font-family: "Maison Neue";
+}
+
+/* Individual styles */
+
+.text-title {
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 600;
+}
+
+.text-title-smaller {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 600;
+}
+
+.text-subtitle-larger {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+.text-subtitle {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.text-subtitle-smaller {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.text-subtitle-smallest {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.text-body-larger {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+}
+
+.text-body {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 300;
+}
+
+.text-body-smaller {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 300;
+}
+
+.text-body-smallest {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 300;
+}
+
+.text-label {
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
