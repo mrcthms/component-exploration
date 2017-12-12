@@ -1,34 +1,28 @@
-import React from 'react'
+import { Children, cloneElement } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import './Type.css'
 
-const getClassName = ({ order, size }) => {
-  if (!size) {
-    return `text-${order}`
-  }
-  return `text-${order}-${size}`
+const getClassName = ({ order, size, prose }, { className }) => {
+  return cx({
+    [`text-${order}`]: !size,
+    [`text-${order}-${size}`]: size,
+    'text-prose': prose,
+    ...className
+  })
 }
-const Type = props => {
-  const Tag = `${props.element}`
 
-  return (
-    <Tag className={cx(getClassName(props), { 'text-prose': props.prose })}>
-      {props.children}
-    </Tag>
-  )
+const Type = props => {
+  return Children.map(props.children, child => cloneElement(child, {
+    className: getClassName(props, child)
+  }))
 }
 
 Type.propTypes = {
-  element: PropTypes.string.isRequired,
   order: PropTypes.oneOf(['title', 'subtitle', 'body', 'label']).isRequired,
   size: PropTypes.oneOf(['larger', 'smaller', 'smallest']),
   prose: PropTypes.bool,
   children: PropTypes.node.isRequired
-}
-
-Type.defaultProps = {
-  element: 'div'
 }
 
 export default Type
